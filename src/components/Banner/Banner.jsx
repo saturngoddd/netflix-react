@@ -11,7 +11,6 @@ const Banner = () => {
   const truncate = (str, limit) => {
     return str?.length > limit ? str?.substr(0, limit) + "..." : str;
   };
-  console.log(movie);
   return (
     <header
       className="banner"
