@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 import "./Row.css";
 const Row = ({ title, getMovies, isLargeMovies }) => {
   const [movies, setMovies] = useState([]);
@@ -7,10 +10,18 @@ const Row = ({ title, getMovies, isLargeMovies }) => {
   useEffect(() => {
     isSuccess && setMovies(data.results);
   }, [getMovies, isSuccess]);
+  let settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: isLargeMovies ? 8 : 6,
+    slidesToScroll: 1,
+    autoplay: false,
+  };
   return (
     <div className="row">
       <h2 className="row__title">{title}</h2>
-      <div className="row__posters">
+      <Slider {...settings} className="row__posters">
         {movies.map((movie) => {
           return (
             <img
@@ -23,7 +34,7 @@ const Row = ({ title, getMovies, isLargeMovies }) => {
             />
           );
         })}
-      </div>
+      </Slider>
     </div>
   );
 };

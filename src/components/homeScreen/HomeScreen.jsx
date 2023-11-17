@@ -14,6 +14,10 @@ const HomeScreen = () => {
         getMovies={useGetNetflixOriginalsQuery}
         isLargeMovies
       />
+      <Row title="NETFLIX ORIGINALS" getMovies={useGetNetflixOriginalsQuery} />
+      <Row title="NETFLIX ORIGINALS" getMovies={useGetNetflixOriginalsQuery} />
+      <Row title="NETFLIX ORIGINALS" getMovies={useGetNetflixOriginalsQuery} />
+      <Row title="NETFLIX ORIGINALS" getMovies={useGetNetflixOriginalsQuery} />
     </div>
   );
 };
